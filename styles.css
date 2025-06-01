@@ -1,28 +1,24 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
-  background: linear-gradient(135deg, #003366, #0077cc);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 1rem 2rem;
+  background-color: #004080;
+  color: white;
+  padding: 1rem 0;
 }
 
 .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .logo img {
@@ -30,46 +26,115 @@ header {
 }
 
 nav a.btn {
-  margin-left: 1rem;
+  color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  transition: background-color 0.3s;
+  margin-left: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav a.btn:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  color: #ffd700;
 }
 
-main {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero {
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 1rem;
+  background: linear-gradient(to right, #e6f0ff, #ffffff);
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  animation: slideDown 0.7s ease-out;
 }
 
 .slogan {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin: 0.5rem 0;
 }
 
-.actions a.btn {
-  margin: 0 1rem;
-  padding: 0.75rem 1.5rem;
+.actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
+.btn {
+  background-color: #004080;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #0066cc;
+  transform: translateY(-2px);
+}
+
+.icon-btn svg {
+  stroke: white;
+}
+
+/* Animación de entrada */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
 footer {
+  background-color: #004080;
+  color: white;
   text-align: center;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
   font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .slogan {
+    font-size: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
