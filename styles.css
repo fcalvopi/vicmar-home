@@ -20,6 +20,22 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-text img {
+  height: 50px;
+}
+
+.logo-text span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
 
 .logo img {
   height: 50px;
